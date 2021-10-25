@@ -37,11 +37,11 @@ const SignUp = () => {
         <>
             <Heading textAlign="center" p="5">Sign Up</Heading>
             <Stack as="form" spacing={3} m="5" mx="auto" w={["85%", "80%", "40%"]} onSubmit={handleSubmit}>
-                <Input type="email" variant="outline" placeholder="Email" ref={emailRef} />
-                <Input type="password" variant="outline" placeholder="Password" ref={passRef} />
-                <Input type="password" variant="outline" placeholder="Confirm Password" ref={confPassRef} />
+                <Input type="email" required variant="outline" placeholder="Email" ref={emailRef} />
+                <Input type="password" required variant="outline" placeholder="Password" ref={passRef} />
+                <Input type="password" required variant="outline" placeholder="Confirm Password" ref={confPassRef} />
                 <Button disabled={loading} type="submit" colorScheme="purple">Sign Up</Button>
-                <Text textAlign="right">Already have an account? <Link to="/login">Log In!</Link></Text>
+                <Text textAlign="right">Already have an account? <Button variant="link"><Link to="/login">Log in!</Link></Button></Text>
                 {error && (
                     <Alert status="error">
                         <AlertIcon />

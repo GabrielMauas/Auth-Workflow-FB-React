@@ -30,10 +30,13 @@ const LogIn = () => {
         <>
             <Heading textAlign="center" p="5">Log In</Heading>
             <Stack as="form" spacing={3} m="5" mx="auto" w={["85%", "80%", "40%"]} onSubmit={handleSubmit}>
-                <Input type="email" variant="outline" placeholder="Email" ref={emailRef} />
-                <Input type="password" variant="outline" placeholder="Password" ref={passRef} />
+                <Input type="email" required variant="outline" placeholder="Email" ref={emailRef} />
+                <Input type="password" required variant="outline" placeholder="Password" ref={passRef} />
+                <Button justifyContent="flex-end" variant="link"><Link to="/reset-password">Forgot Password?</Link></Button>
+                
                 <Button disabled={loading} type="submit" colorScheme="purple" >Log In</Button>
-                <Text textAlign="right">Don't have an account? <Link to="/signup">Sign Up!</Link></Text>
+                <Text textAlign="right">Don't have an account? <Button variant="link"><Link to="/signup">Sign Up!</Link></Button></Text>
+            
                 {error && (
                     <Alert status="error">
                         <AlertIcon />
@@ -41,6 +44,8 @@ const LogIn = () => {
                     </Alert>
                 )}
             </Stack>
+ 
+
         </>
     )
 }
